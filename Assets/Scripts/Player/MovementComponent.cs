@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class MovementComponent : MonoBehaviour
 {
-   //movement variables
+    //movement variables
     [SerializeField]
     float walkSpeed = 5;
     [SerializeField]
