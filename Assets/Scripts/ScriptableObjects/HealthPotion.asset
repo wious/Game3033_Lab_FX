@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Item
   itemCategory: 2
-  itemPrefab: {fileID: 615468085236696886, guid: a329bfd1ac115514a9ef4860bce9fd8c, type: 3}
+  itemPrefab: {fileID: 615468085236696886, guid: 52f7dc6ef910e9647bc229e44ac81646, type: 3}
   stackable: 1
   maxSize: 30
   amountValue: 1
