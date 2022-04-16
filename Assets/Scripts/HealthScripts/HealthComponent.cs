@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class HealthComponent : MonoBehaviour, IDamageable
 {
     [SerializeField]
@@ -20,6 +20,12 @@ public class HealthComponent : MonoBehaviour, IDamageable
     public virtual void Destroy()
     {
         Destroy(gameObject);
+        if (gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("GameOver");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     public virtual void TakeDamage(float damage)
@@ -29,6 +35,7 @@ public class HealthComponent : MonoBehaviour, IDamageable
         {
             Destroy();
         }
+        
     }
 
 }

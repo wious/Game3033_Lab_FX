@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,5 +11,4 @@ public class PlayerHealthComponent : HealthComponent
         base.Start();
         PlayerEvents.InvokeOnHealthInitialized(this);
     }
-
 }

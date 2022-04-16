@@ -10,4 +10,12 @@ public class MainMenuCanvas : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    public void BackMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

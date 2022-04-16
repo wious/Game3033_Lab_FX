@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &143215117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 143215118}
+  m_Layer: 0
+  m_Name: FollowTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &143215118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143215117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3829994, y: 1.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3097856551391995058}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1075340980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075340981}
+  m_Layer: 0
+  m_Name: WeaponSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1075340981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075340980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3801840359504395409}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &270834851044796127
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +307,7 @@ Transform:
   - {fileID: 4464609273797790513}
   - {fileID: 6051434779156702293}
   - {fileID: 6362852175667091367}
+  - {fileID: 1075340981}
   m_Father: {fileID: 1073030486169433841}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -851,9 +912,11 @@ GameObject:
   - component: {fileID: 5907037851925986242}
   - component: {fileID: 8996648929634550631}
   - component: {fileID: 153948900261253016}
+  - component: {fileID: 392944783}
+  - component: {fileID: 392944784}
   m_Layer: 0
   m_Name: Josh
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -878,6 +941,7 @@ Transform:
   - {fileID: 2685090255679865337}
   - {fileID: 7623000744850696844}
   - {fileID: 7398744389584438310}
+  - {fileID: 143215118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -976,6 +1040,8 @@ MonoBehaviour:
   isReloading: 0
   isJumping: 0
   isRunning: 0
+  isAiming: 0
+  inventory: {fileID: 0}
 --- !u!114 &153948900261253016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +1057,39 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   jumpForce: 5
+  followTransform: {fileID: 143215117}
+  aimSensitivity: 0.08
+--- !u!114 &392944783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429160601258720776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb597972f8c852c4faff753a957b1870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponToSpawn: {fileID: 0}
+  playerController: {fileID: 0}
+  crossHairImage: {fileID: 0}
+  weaponSocketLocation: {fileID: 1075340980}
+  gripIKSocketLocation: {fileID: 0}
+--- !u!114 &392944784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429160601258720776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37809276d81f8cb4cbcc00c17d888efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
 --- !u!1 &2482176082846391635
 GameObject:
   m_ObjectHideFlags: 0
