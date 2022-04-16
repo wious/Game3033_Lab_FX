@@ -11,6 +11,8 @@ public class HealthComponent : MonoBehaviour, IDamageable
     [SerializeField]
     private float maxHealth;
     public float MaxHealth => maxHealth;
+
+    public int number = 0;
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -25,6 +27,11 @@ public class HealthComponent : MonoBehaviour, IDamageable
             SceneManager.LoadScene("GameOver");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+        
+        if (gameObject.tag == "Enemy")
+        {
+            number+=1;
         }
     }
 
