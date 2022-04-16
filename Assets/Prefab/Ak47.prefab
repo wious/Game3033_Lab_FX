@@ -111,7 +111,7 @@ MonoBehaviour:
     weaponType: 2
     firingPattern: 1
     weaponName: AK-47
-    damage: 35
+    damage: 25
     bulletsInClip: 30
     clipSize: 30
     fireStartDelay: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
     weaponHitLayers:
       serializedVersion: 2
       m_Bits: 4294967295
-    totalBullets: 500
+    totalBullets: 600
   firingEffect: {fileID: 7407576086643768775}
   isFiring: 0
   isReloading: 0
